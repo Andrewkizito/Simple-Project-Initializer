@@ -1,4 +1,4 @@
-import { colorize } from "colorize-node";
+const { colorize } = require("colorize-node");
 
 export const showLoader = () => {
   let loader = "#";
@@ -11,7 +11,7 @@ export const showLoader = () => {
   return loaderId;
 };
 
-const handlerloader = (loader: string, times: number) => {
+const handlerloader = (loader, times) => {
   loader = loader.repeat(times);
   process.stdout.write("\r" + colorize.blue(loader));
 };
