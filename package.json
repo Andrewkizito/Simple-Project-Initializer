@@ -8,9 +8,9 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "deploy:patch": "npm run clean && npm publish patch && rm *.tgz",
-    "deploy:minor": "npm run clean && npm publish minor && rm *.tgz",
-    "deploy:major": "npm run clean && npm publish major && rm *.tgz"
+    "deploy:patch": "npm version patch && npm run clean && npm publish && rm *.tgz",
+    "deploy:minor": "npm version minor && npm run clean && npm publish && rm *.tgz",
+    "deploy:major": "npm version major && npm run clean && npm publish && rm *.tgz"
   },
   "keywords": [],
   "author": "",
