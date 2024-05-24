@@ -7,7 +7,8 @@
     "simple-project-initializer": "./scripts/main.js"
   },
   "scripts": {
-    "build": "npm version patch && tsc",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm version patch && tsc",
     "deploy": "npm run build && npm publish"
   },
   "keywords": [],
@@ -21,6 +22,7 @@
     "@types/node": "^20.12.12",
     "colorize-node": "^0.5.2",
     "nodemon": "^3.1.0",
+    "rimraf": "^5.0.7",
     "typescript": "^5.4.5"
   }
 }
