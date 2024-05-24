@@ -7,9 +7,10 @@
     "simple-project-initializer": "src/main.js"
   },
   "scripts": {
-    "deploy:patch": "npm publish patch",
-    "deploy:minor": "npm publish minor",
-    "deploy:major": "npm publish major"
+    "clean": "rimraf dist",
+    "deploy:patch": "npm run clean && npm publish patch && rm *.tgz",
+    "deploy:minor": "npm run clean && npm publish minor && rm *.tgz",
+    "deploy:major": "npm run clean && npm publish major && rm *.tgz"
   },
   "keywords": [],
   "author": "",
