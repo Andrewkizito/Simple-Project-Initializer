@@ -1,0 +1,25 @@
+{
+  "name": "simple-project-initializer",
+  "version": "2.5.0",
+  "description": "",
+  "main": "main.js",
+  "bin": {
+    "simple-project-initializer": "./scripts/main.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --exec \"ts-node src/main.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "colorize-node": "^0.5.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  }
+}
