@@ -1,12 +1,20 @@
 import { SupportedArgs } from "./types";
 
-const supportArgPairs: SupportedArgs[][] = [
-  ["-h", "--help"],
-  ["-v", "--version"],
+const helperText = `
+Usage: simple-project-initializer [options]
+
+Version: 2.5.0
+
+Options:
+`
+
+const supportArgPairs: [SupportedArgs, SupportedArgs, string][] = [
+  ["-h", "--help", "Displays help information"],
+  ["-v", "--version", "Displays program version information"],
 ];
 
 const supportedArgs: Set<SupportedArgs> = new Set(
-  supportArgPairs.flatMap((item) => item)
+  supportArgPairs.flatMap((item) => [item[0], item[1]])
 );
 
 function validateArgs(args: string[]) {
@@ -23,4 +31,13 @@ function validateArgs(args: string[]) {
   }
 }
 
-export { validateArgs };
+function handleArgs(args: string[]) {
+  if (args[0] === "-h" || args[0] === "--help") {
+    console.log(helperText);
+    for (const item of supportArgPairs) {
+      console.log(`  ${item[1]}\t\t ${item[2]}`);
+    }
+  }
+}
+
+export { validateArgs, handleArgs };
