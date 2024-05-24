@@ -7,9 +7,9 @@
     "simple-project-initializer": "src/main.js"
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && npm version patch",
-    "deploy": "npm run build && npm publish"
+    "deploy:patch": "npm publish patch",
+    "deploy:minor": "npm publish minor",
+    "deploy:major": "npm publish major"
   },
   "keywords": [],
   "author": "",
