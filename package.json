@@ -7,13 +7,14 @@
     "simple-project-initializer": "./scripts/main.js"
   },
   "scripts": {
-    "build": "tsc",
-    "dev": "nodemon --exec \"ts-node src/main.ts\""
+    "build": "npm version patch && tsc",
+    "deploy": "npm run build && npm publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.2",
     "commander": "^12.1.0"
   },
   "devDependencies": {
